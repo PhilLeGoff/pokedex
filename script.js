@@ -18,9 +18,9 @@ function createPokemonCard(pokemon) {
   `;
 }
 
-function fetchPokemons() {
+async function fetchPokemons() {
   for (let i = startIndex; i <= pokemonsNumber; i++) {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
+    await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
       .then(response => response.json())
       .then(data => {
         createPokemonCard(data);
